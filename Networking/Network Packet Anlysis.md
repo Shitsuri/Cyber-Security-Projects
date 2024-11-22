@@ -24,49 +24,46 @@ Key Concepts
 
 Process of Packet Analysis
 
-Packet Capture
+1. Packet Capture
 
-      Use tools (e.g., Wireshark or tcpdump) to intercept packets on a network interface.
-      Ensure proper permissions (e.g., root privileges).
+       Use tools (e.g., Wireshark or tcpdump) to intercept packets on a network interface.
+       Ensure proper permissions (e.g., root privileges).
 
-Packet Inspection
+2. Packet Inspection
 
-    Examine headers for IP addresses, protocols (TCP/UDP/ICMP), and port numbers.
-    Analyze payloads for application data (e.g., HTTP, DNS).
+       Examine headers for IP addresses, protocols (TCP/UDP/ICMP), and port numbers.
+       Analyze payloads for application data (e.g., HTTP, DNS).
 
-Pattern Identification
+5. Pattern Identification
 
-    Look for anomalies, such as unusual traffic spikes, failed connections, or odd payload sizes.
+       Look for anomalies, such as unusual traffic spikes, failed connections, or odd payload sizes.
 
-Filtering
+6. Filtering
 
-    Apply filters to focus on specific traffic (e.g., ip.addr == 192.168.1.1 in Wireshark).
+       Apply filters to focus on specific traffic (e.g., ip.addr == 192.168.1.1 in Wireshark).
 
 Logging and Reporting
 
-    Record findings and generate actionable reports.
+       Record findings and generate actionable reports.
 
 Key Protocols in Analysis
 
-    TCP (Transmission Control Protocol): Ensures reliable data transfer.
-    UDP (User Datagram Protocol): Facilitates fast, connectionless communication.
-    HTTP/HTTPS: Analyze web traffic and encrypted content.
-    DNS (Domain Name System): Look for unusual queries or potential exfiltration.
-    ICMP (Internet Control Message Protocol): Monitor ping or traceroute behavior.
+      TCP (Transmission Control Protocol): Ensures reliable data transfer.
+      UDP (User Datagram Protocol): Facilitates fast, connectionless communication.
+      HTTP/HTTPS: Analyze web traffic and encrypted content.
+      DNS (Domain Name System): Look for unusual queries or potential exfiltration.
+      ICMP (Internet Control Message Protocol): Monitor ping or traceroute behavior.
 
 Applications
 
- Cybersecurity
+    Cybersecurity
+    Detect DDoS attacks, port scanning, or malware communications.
  
- Detect DDoS attacks, port scanning, or malware communications.
+    Compliance
+    Ensure data integrity and adherence to policies like GDPR or HIPAA.
  
- Compliance
- 
- Ensure data integrity and adherence to policies like GDPR or HIPAA.
- 
- Network Optimization
- 
- Identify bottlenecks, optimize routing, and improve application responsiveness.
+    Network Optimization
+    Identify bottlenecks, optimize routing, and improve application responsiveness.
 
 Best Practices
 
