@@ -1,7 +1,7 @@
 Here are 10 essential Nmap commands, along with detailed explanations for each:
 
 1. Scan a single host:
-'nmap <host>'
+`nmap <host>`
 This command scans a single host specified by its IP address or hostname. By default, Nmap scans the 1000 most common ports.
 
 2. Scan a range of IP addresses:
