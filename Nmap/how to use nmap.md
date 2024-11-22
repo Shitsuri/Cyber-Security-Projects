@@ -2,9 +2,9 @@
 
 Nmap (Network Mapper) is a powerful tool for network exploration and security auditing. Here are some basic steps to use Nmap:
 
-1. Install Nmap: Nmap is usually pre-installed on many Linux distributions, but if you are on Windows or macOS, you need to download and install it from the official website.
+1. Nmap is typically pre-installed on many Linux distributions. However, if you're using Windows or macOS, you will need to download and install it from the official Nmap website.
 
-2. Determine your target: You need to specify the target IP address or range of IP addresses that you want to scan. For example, you could use a single IP address (e.g., 192.168.1.1) or a range of IP addresses (e.g., 192.168.1.1-100).
+2. Specify the target IP address or range of IP addresses that you want to scan. You can target a single IP address (e.g., 192.168.1.1) or a range of IP addresses (e.g., 192.168.1.1-100).
 
 3. Run a basic scan: To perform a basic scan, use the following command:
 
