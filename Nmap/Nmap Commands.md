@@ -5,7 +5,7 @@ Here are 10 essential Nmap commands, along with detailed explanations for each:
 This command scans a single host specified by its IP address or hostname. By default, Nmap scans the 1000 most common ports.
 
 2. Scan a range of IP addresses:
-nmap <start IP>-<end IP>
+'nmap <start IP>-<end IP>'
 This command scans a range of IP addresses, from the start IP to the end IP. For example, nmap 192.168.1.1-10 will scan IPs from 192.168.1.1 to 192.168.1.10.
 
 3. Scan a subnet:
