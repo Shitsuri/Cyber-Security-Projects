@@ -12,10 +12,10 @@ Nmap (Network Mapper) is a powerful tool for network exploration and security au
    nmap <target>
    ```
 
-   For example, if your target is 192.168.1.1, you would run the following command:
+   For example, if your target is 192.168.2.1, you would run the following command:
 
    ```
-   nmap 192.168.1.1
+   nmap 192.168.2.1
    ```
 
 4. Analyze the results: Once the scan is complete, Nmap will provide a list of open ports, operating systems, and other information about the target. This information can be used to identify potential vulnerabilities in the target.
