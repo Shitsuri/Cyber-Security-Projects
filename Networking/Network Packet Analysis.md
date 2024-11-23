@@ -3,9 +3,9 @@ Key Concepts
  A network packet is a small unit of data transmitted over a network.
  It consists of three parts:
 
- Header: Contains metadata, such as source/destination IP addresses, protocol, and port numbers.
-        Payload: The actual data being transmitted.
-        Trailer: Optional; often used for error detection.
+   It Contains metadata, such as source/destination IP addresses, protocol, and port numbers.
+   Payload: The actual data being transmitted.
+   Trailer: Optional; often used for error detection.
 
  2. Why Analyze Packets?
 
