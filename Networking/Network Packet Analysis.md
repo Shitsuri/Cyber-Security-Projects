@@ -10,8 +10,11 @@ Key Concepts
  2. Why Analyze Packets?
 
     Troubleshooting: To identify connectivity or latency issues in a network.
+    
     Security: Detect suspicious or malicious activities like intrusions or data breaches.
+    
     Performance: Optimize network bandwidth and application behavior.
+
 
  4. Packet Analysis Tools
 
