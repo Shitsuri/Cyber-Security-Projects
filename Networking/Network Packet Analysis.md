@@ -1,5 +1,5 @@
 Key Concepts
-1. What is a Network Packet?
+ 1. What is a Network Packet?
  A network packet is a small unit of data transmitted over a network.
  It consists of three parts:
 
