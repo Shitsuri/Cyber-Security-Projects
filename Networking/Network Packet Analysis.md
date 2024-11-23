@@ -1,4 +1,4 @@
-Key Concepts
+ Key Concepts
 1. What is a Network Packet?
  A network packet is a small unit of data transmitted over a network.
  It consists of three parts:
@@ -10,7 +10,7 @@ Key Concepts
  2. Why Analyze Packets?
 
     Troubleshooting: To identify connectivity or latency issues in a network.
- Security: Detect suspicious or malicious activities like intrusions or data breaches.
+   t Security: Detect suspicious or malicious activities like intrusions or data breaches.
     Performance: Optimize network bandwidth and application behavior.
 
 
