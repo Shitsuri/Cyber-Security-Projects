@@ -1,5 +1,5 @@
 Key Concepts
- 1. What is a Network Packet?
+1. What is a Network Packet?
  A network packet is a small unit of data transmitted over a network.
  It consists of three parts:
 
@@ -7,13 +7,13 @@ Key Concepts
         Payload: The actual data being transmitted.
         Trailer: Optional; often used for error detection.
 
-3. Why Analyze Packets?
+ 2. Why Analyze Packets?
 
     Troubleshooting: Identify connectivity or latency issues.
     Security: Detect suspicious or malicious activities like intrusions or data breaches.
     Performance: Optimize network bandwidth and application behavior.
 
-4. Packet Analysis Tools
+ 3. Packet Analysis Tools
 
    Common tools include:
 
@@ -26,7 +26,7 @@ Process of Packet Analysis
 
 1. Packet Capture
 
-   Using wireshark i captued a packet of tcp
+The first step in my analysis was to capture network traffic using Wireshark. I specifically focused on capturing TCP packets, as I was interested in analyzing a connection-oriented protocol. To do this, I started       Wireshark and selected the network interface to monitor. I applied a simple capture filter (tcp) to ensure I only captured TCP traffic and then let Wireshark run to gather the packets. Once I had captured a sufficient amount of data, I saved the capture as a .pcap file for further analysis.
 
 2. Packet Inspection
 
