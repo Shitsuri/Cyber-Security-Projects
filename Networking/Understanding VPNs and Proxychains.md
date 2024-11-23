@@ -1,8 +1,5 @@
 1. Project Planning and Objectives
 
-    Define the Scope: What specific aspects of VPNs (Virtual Private Networks) and Proxychains will you cover? Are you looking at their usage for anonymity, security, or network bypassing?
-    Set Clear Objectives: Examples could include understanding how VPNs encrypt data, how Proxychains routes traffic, or how both technologies enhance privacy and security.
-
    For this project, I focused on the security of Virtual Private Networks (VPNs) and Proxychains, two popular tools for protecting privacy and anonymity online. My goal was to understand how both technologies secure user data, explore the security of various VPN protocols, identify potential vulnerabilities in both VPNs and Proxychains, and compare their effectiveness in terms of encryption and anonymity.
 
 3. Research and Background
