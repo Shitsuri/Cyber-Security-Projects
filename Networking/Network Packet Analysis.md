@@ -1,9 +1,8 @@
 Key Concepts
 1. What is a Network Packet?
-
-    A network packet is a small unit of data transmitted over a network.
-    It consists of three parts:
-        Header: Contains metadata, such as source/destination IP addresses, protocol, and port numbers.
+ A network packet is a small unit of data transmitted over a network.
+ It consists of three parts:
+ Header: Contains metadata, such as source/destination IP addresses, protocol, and port numbers.
         Payload: The actual data being transmitted.
         Trailer: Optional; often used for error detection.
 
@@ -26,8 +25,7 @@ Process of Packet Analysis
 
 1. Packet Capture
 
-       Use tools (e.g., Wireshark or tcpdump) to intercept packets on a network interface.
-       Ensure proper permissions (e.g., root privileges).
+   Using wireshark i captued a packet of tcp
 
 2. Packet Inspection
 
@@ -54,20 +52,3 @@ Key Protocols in Analysis
       DNS (Domain Name System): Look for unusual queries or potential exfiltration.
       ICMP (Internet Control Message Protocol): Monitor ping or traceroute behavior.
 
-Applications
-
-    Cybersecurity
-    Detect DDoS attacks, port scanning, or malware communications.
- 
-    Compliance
-    Ensure data integrity and adherence to policies like GDPR or HIPAA.
- 
-    Network Optimization
-    Identify bottlenecks, optimize routing, and improve application responsiveness.
-
-Best Practices
-
-    Use encrypted packet capture tools to avoid exposing sensitive data.
-    Employ filtering to reduce noise and focus on relevant data.
-    Respect privacy laws and ethical boundaries during analysis.
-    Keep your tools and skills up to date with emerging threats and technologies.
