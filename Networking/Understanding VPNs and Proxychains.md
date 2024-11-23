@@ -5,7 +5,7 @@
 3. Research and Background
 
     Understand VPNs:
-    a VPN connects your PC, smartphone, or tablet to another computer (called a server) somewhere on the internet, and allows you to browse the internet using that computer's internet connection. So if that server is in a        different country, it will appear as if you are coming from that country, and you can potentially access things that you couldn't normally.VPNs essentially forward all your network traffic to the virtual network, which is where the benefits -- like accessing local network resources remotely and bypassing Internet censorship -- all come from. Most operating systems have integrated VPN support.VPNs originally were just a way to connect business networks together securely over the internet or allow you to access a business network from home, but their uses have grown well beyond that.
+      a VPN connects your PC, smartphone, or tablet to another computer (called a server) somewhere on the internet, and allows you to browse the internet using that computer's internet connection. So if that server is in a        different country, it will appear as if you are coming from that country, and you can potentially access things that you couldn't normally.VPNs essentially forward all your network traffic to the virtual network, which is where the benefits -- like accessing local network resources remotely and bypassing Internet censorship -- all come from. Most operating systems have integrated VPN support.VPNs originally were just a way to connect business networks together securely over the internet or allow you to access a business network from home, but their uses have grown well beyond that.
 
    Understand Proxychains:
    
