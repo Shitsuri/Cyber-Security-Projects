@@ -10,7 +10,7 @@
  2. Why Analyze Packets?
 
     Troubleshooting: To identify connectivity or latency issues in a network.
-   t Security: Detect suspicious or malicious activities like intrusions or data breaches.
+    Security: Detect suspicious or malicious activities like intrusions or data breaches.
     Performance: Optimize network bandwidth and application behavior.
 
 
