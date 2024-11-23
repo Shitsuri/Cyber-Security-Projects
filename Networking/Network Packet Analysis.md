@@ -26,7 +26,7 @@ Process of Packet Analysis
 
 1. Packet Capture
 
-The first step in my analysis was to capture network traffic using Wireshark. I specifically focused on capturing TCP packets, as I was interested in analyzing a connection-oriented protocol. To do this, I started       Wireshark and selected the network interface to monitor. I applied a simple capture filter (tcp) to ensure I only captured TCP traffic and then let Wireshark run to gather the packets. Once I had captured a sufficient amount of data, I saved the capture as a .pcap file for further analysis.
+The first thing, I did was to capture network traffic using Wireshark. I specifically focused on capturing TCP packets. To do this, I started, Wireshark and selected the network interface to monitor. I applied a simple capture filter (tcp) to ensure I only captured TCP traffic and then let Wireshark run to gather the packets. Once I had captured all the data I needed, I saved the capture as a .pcap file for further analysis.
 
 2. Packet Inspection
 
