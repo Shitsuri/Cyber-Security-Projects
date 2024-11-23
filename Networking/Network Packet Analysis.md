@@ -13,7 +13,7 @@ Key Concepts
     Security: Detect suspicious or malicious activities like intrusions or data breaches.
     Performance: Optimize network bandwidth and application behavior.
 
- 3. Packet Analysis Tools
+ 4. Packet Analysis Tools
 
    Common tools include:
 
