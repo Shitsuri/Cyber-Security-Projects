@@ -10,7 +10,7 @@
 
    Understand Proxychains:
    
-   Learn what Proxychains is—a tool that allows you to route your internet traffic through multiple proxy servers.
+   Learn what ProXychains is—a tool that allows you to route your internet traffic through multiple proxy servers.
         Key topics to explore:
             How Proxychains works by chaining proxies (e.g., SOCKS5, HTTP).
             Differences between a proxy server and a VPN.
@@ -20,10 +20,27 @@
 5. Set Up VPN and Proxychains Environments
 
     VPN Setup:
-        Set up a VPN service (you can use a commercial service like NordVPN or a self-hosted VPN with OpenVPN).
-        Test the VPN connection on your system. Verify the connection through tools like ipconfig (Windows) or ifconfig/ip a (Linux) to check the new IP address.
-        Check DNS leaks using online tools to see if the VPN is effectively masking your true location.
-    Proxychains Setup:
+       Setting Up a VPN on Windows
+Option A: Using a Third-Party VPN App
+
+    Download and Install the VPN App
+        Go to your VPN provider's website or download their app from the Microsoft Store.
+        Install the app and log in with your account credentials.
+
+    Connect to a VPN Server
+        Open the app and select a server location to connect to.
+        Click the "Connect" button. You should now be connected to the VPN.
+
+Option B: Manually Setting Up a VPN Connection
+
+If you want to set up a VPN connection manually (for example, for PPTP, L2TP, or IKEv2 protocols):
+
+   Open Settings: Go to Start > Settings > Network & Internet > VPN.
+   Add a VPN Connection:
+        Click Add a VPN connection.
+        Fill out the required details (VPN provider, connection name, server address, VPN type, and login info). This information should be provided by your VPN service.
+   Connect to the VPN: After adding the VPN, click on its name and select Connect.
+   Proxychains Setup:
         Install Proxychains on your system (it’s available on Linux distributions).
         Configure Proxychains with different proxy types, like SOCKS5 or HTTP proxies.
         Test the setup by running a command like curl ipinfo.io or using a browser to see if the traffic routes through the proxy.
