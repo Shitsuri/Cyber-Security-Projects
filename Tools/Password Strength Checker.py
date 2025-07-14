@@ -4,16 +4,13 @@ from pyfiglet import Figlet
 from termcolor import colored  
 
 def estimate_crack_time(password):
-    # First count how long the password is
+
     length = len(password)
+    has_lower = re.search(r'[a-z]', password)  
+    has_upper = re.search(r'[A-Z]', password) 
+    has_num = re.search(r'[0-9]', password)  
+    has_special = re.search(r'[^a-zA-Z0-9]', password) 
     
-    # Check if password has different stuff in it
-    has_lower = re.search(r'[a-z]', password)  # like 'a'
-    has_upper = re.search(r'[A-Z]', password)  # like 'A'
-    has_num = re.search(r'[0-9]', password)  # like '4'
-    has_special = re.search(r'[^a-zA-Z0-9]', password)  # like '@' (magic regex)
-    
-    # Super technical password strength algorithm (trust me)
     if length < 8:
         return "Instant (Weak af)"
     elif length >= 12 and (has_lower and has_upper and has_num and has_special):
@@ -27,7 +24,6 @@ def check_strength(password):
     feedback = []  # this will store all the messages
     length = len(password)
     
-    # Rule 1: Longer passwords are better I think?
     if length < 8:
         feedback.append(colored("❌ Too short (hackers love short passwords)", "red"))
     else:
@@ -38,7 +34,7 @@ def check_strength(password):
         "Lowercase letters": re.search(r'[a-z]', password),
         "Uppercase letters": re.search(r'[A-Z]', password),
         "Numbers": re.search(r'[0-9]', password),
-        "Special chars": re.search(r'[^a-zA-Z0-9]', password)  # black magic
+        "Special chars": re.search(r'[^a-zA-Z0-9]', password) 
     }
     
     # Add check results to feedback
