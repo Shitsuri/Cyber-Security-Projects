@@ -1,56 +1,109 @@
- Key Concepts
-1. What is a Network Packet?
- A network packet is a small unit of data transmitted over a network.
- It consists of three parts:
+ Network Packet Analysis Guide
+Core Concepts
+1. Network Packet Structure
 
-   It Contains metadata, such as source/destination IP addresses, protocol, and port numbers.
-   Payload: The actual data being transmitted.
-   Trailer: Optional; often used for error detection.
+A network packet is the fundamental unit of data transmission across networks, consisting of:
+Component	Description
+Header	Contains metadata (source/destination IP, protocol, ports, TTL, checksums)
+Payload	The actual data being transmitted (e.g., HTTP requests, DNS queries)
+Trailer	Optional footer for error detection (e.g., Frame Check Sequence in Ethernet)
+2. Purpose of Packet Analysis
+Use Case	Application Example
+Troubleshooting	Diagnosing dropped VoIP calls by analyzing RTP/RTCP packet loss
+Security	Detecting port scanning (e.g., SYN floods) or malware C2 traffic
+Performance	Identifying bandwidth hogs via throughput analysis (e.g., Netflix vs. Zoom traffic)
+Tools Comparison
+Tool	Type	Best For	Example Command
+Wireshark	GUI	Deep protocol analysis	Filter: tcp.port == 443 && http
+tcpdump	CLI	High-speed capture	tcpdump -i eth0 'port 53' -w dns.pcap
+Zeek	IDS	Behavioral analysis	Generates conn.log with flow data
+Analysis Workflow
+1. Capture
 
- 2. Why Analyze Packets?
+    Method: Use Wireshark (GUI) or tcpdump (CLI)
 
-    Troubleshooting: To identify connectivity or latency issues in a network.
-    Security: Detect suspicious or malicious activities like intrusions or data breaches.
-    Performance: Optimize network bandwidth and application behavior.
+    Best Practices:
+    bash
 
+    # Capture only HTTP traffic on port 80
+    tcpdump -i eth0 'tcp port 80' -w http_traffic.pcap
 
- 4. Packet Analysis Tools
+        Limit captures to 100MB to avoid overload: -C 100
 
-   Common tools include:
+2. Inspection
 
-       Wireshark: A widely used GUI-based tool for detailed packet inspection.
-       tcpdump: A command-line tool for capturing network packets.
-       ngrep: A utility for analyzing packets with pattern matching.
-       Snort/Suricata: Intrusion detection systems (IDS) that analyze packet data for security threats.
+    Key Headers:
 
-Process of Packet Analysis
+        Ethernet: Source/dest MAC addresses
 
-1. Packet Capture
+        IP: TTL, fragmentation flags
 
-The first thing, I did was to capture network traffic using Wireshark. I specifically focused on capturing TCP packets. To do this, I started, Wireshark and selected the network interface to monitor. I applied a simple capture filter (tcp) to ensure I only captured TCP traffic and then let Wireshark run to gather the packets. Once I had captured all the data I needed, I saved the capture as a .pcap file for further analysis.
+        TCP: Sequence numbers, window size
 
-2. Packet Inspection
+    Payload Tricks:
+    wireshark
 
-       Examine headers for IP addresses, protocols (TCP/UDP/ICMP), and port numbers.
-       Analyze payloads for application data (e.g., HTTP, DNS).
+    Follow TCP Stream > Analyze HTTP cookies
+    Right-click > Export Objects > Extract files from FTP
 
-5. Pattern Identification
+3. Pattern Detection
+Anomaly	Indicator	Wireshark Filter
+Port Scan	Repeated SYN to closed ports	tcp.flags.syn==1 && tcp.flags.ack==0
+DNS Tunneling	Long TXT records or high frequency	dns.qry.type == 16
+4. Filtering
+wireshark
 
-       Look for anomalies, such as unusual traffic spikes, failed connections, or odd payload sizes.
+# Show only traffic between two IPs
+ip.addr == 192.168.1.100 && ip.addr == 10.0.0.5
 
-6. Filtering
+# Find failed connections
+tcp.flags.reset == 1
 
-       Apply filters to focus on specific traffic (e.g., ip.addr == 192.168.1.1 in Wireshark).
+5. Reporting
 
-Logging and Reporting
+    Essential Metrics:
+    text
 
-       Record findings and generate actionable reports.
+Top Talkers: Conversations > IPv4 Statistics
+Round-Trip Time: Statistics > TCP Stream Graph
 
-Key Protocols in Analysis
+Automation:
+bash
 
-      TCP (Transmission Control Protocol): Ensures reliable data transfer.
-      UDP (User Datagram Protocol): Facilitates fast, connectionless communication.
-      HTTP/HTTPS: Analyze web traffic and encrypted content.
-      DNS (Domain Name System): Look for unusual queries or potential exfiltration.
-      ICMP (Internet Control Message Protocol): Monitor ping or traceroute behavior.
+    tshark -r capture.pcap -q -z io,phs > protocol_hierarchy.txt
 
+Protocol Cheat Sheet
+Protocol	Key Fields	Security Risks
+TCP	SEQ/ACK numbers, Window	SYN floods, session hijacking
+DNS	Query type (A/AAAA/TXT)	Cache poisoning, exfiltration
+HTTP	User-Agent, Cookies	Credential stuffing, XSS
+Practical Example: Detecting SSH Brute Force
+
+    Capture:
+    bash
+
+tcpdump -i eth0 'port 22' -w ssh.pcap
+
+Analyze:
+wireshark
+
+# Filter rapid connection attempts
+ssh && frame.time_delta < 1.0
+
+Report:
+text
+
+    Alert: 50+ failed SSH logins from 45.33.21.7
+    Recommended Action: Block IP in firewall
+
+Pro Tips
+
+    Optimize Captures:
+    bash
+
+# Drop privileges for security
+tcpdump -Z nobody -i eth0 -w capture.pcap
+
+Cloud Analysis:
+
+    Upload PCAPs to CloudShark for team collaboration
