@@ -1,17 +1,8 @@
-# Password Strength Checker
-# By: YourNameHere
-# A simple tool to check if your password sucks or not
+import re  
+import time 
+from pyfiglet import Figlet 
+from termcolor import colored  
 
-# I heard imports go at the top? Not sure why but everyone does this
-import re  # no idea what this does but stackoverflow said I need it
-import time  # for the fake "scanning" effect
-from pyfiglet import Figlet  # makes fancy text
-from termcolor import colored  # colors!! because black and white is boring
-
-# ============================================
-# This function guesses how long to crack password
-# I copied the math from some blog post lol
-# ============================================
 def estimate_crack_time(password):
     # First count how long the password is
     length = len(password)
@@ -32,10 +23,6 @@ def estimate_crack_time(password):
     else:
         return "Few days (My grandma could crack this)"
 
-# ============================================
-# Checks password and gives tips
-# (I wrote this at 2AM while eating ramen)
-# ============================================
 def check_strength(password):
     feedback = []  # this will store all the messages
     length = len(password)
@@ -63,11 +50,7 @@ def check_strength(password):
     
     return feedback
 
-# ============================================
-# Main thing that runs when you start the program
-# ============================================
 def main():
-    # Fancy title because why not
     f = Figlet(font='slant')
     print(colored(f.renderText('PASSWORD CHECKER 9000'), 'cyan'))
     print(colored("(Now with 100% more security!)", "yellow"))
@@ -88,16 +71,15 @@ def main():
             print("="*50 + "\n")
             break
         
-        # Fake "scanning" effect to look professional
         print("\n" + "-"*40)
-        print(colored("\n🔍 Analyzing password...", "blue"))
-        time.sleep(1.5)  # pause to look like it's doing something hard
-        print(colored("🤖 Asking my hacker friends...", "blue"))
+        print(colored("\nAnalyzing password...", "blue"))
+        time.sleep(1.5) 
+        print(colored("Asking my hacker friends...", "blue"))
         time.sleep(0.5)
-        print(colored("📊 Calculating...", "blue"))
+        print(colored("Calculating...", "blue"))
         time.sleep(0.3)
         
-        # Get the results
+
         feedback = check_strength(password)
         crack_time = estimate_crack_time(password)
         
@@ -107,6 +89,5 @@ def main():
         print(colored(f"\n⏳ Time to crack: {crack_time}", "magenta"))
         print("-"*40 + "\n")
 
-# This makes the program run (I think?)
 if __name__ == "__main__":
     main()
